@@ -4,17 +4,10 @@ using namespace std;
 
 bool isSquare(int n)
 {
-    if (n <= 0 || n == 2)
-        return false;
-    else if (n == 1)
-        return true;
-    while (n > 1)
-    {
-        if (n % 2 != 0)
-            return false;
-        n /= 2;
-    }
-    return true;
+    if (0 == n) return false;
+    int i = 1, m;
+    do m = i * i; while (++i, m < n);
+    return m == n ? true : false;
 }
 
 void isSquare(int n, bool* result) {
